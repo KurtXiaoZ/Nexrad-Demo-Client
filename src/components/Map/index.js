@@ -103,7 +103,7 @@ export const Map = memo((props) => {
         >
           {imgPath === '' && <Loading className='loading'/>}
           {imgPath === 'error' && <Error />}
-          {imgPath !== '' && imgPath !== 'error' && <img src={imgPath} className='image' alt='radar-image'/>}
+          {imgPath !== '' && imgPath !== 'error' && <img src={imgPath} className='image'/>}
         </div>}
       </GoogleMap>
   </> : <></>
