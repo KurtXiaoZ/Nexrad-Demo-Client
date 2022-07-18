@@ -7,8 +7,6 @@ import { ReactComponent as Loading } from '../../lib/loading.svg';
 import { ReactComponent as Error } from '../../lib/error.svg';
 import axios from 'axios';
 
-// https://github.com/netlify/cli/issues/158#issuecomment-540140129
-
 let INIT_LAT = 39.96637466982237;
 let INIT_LNG = -96.54152204152994;
 let INIT_ZOOM = 5;
