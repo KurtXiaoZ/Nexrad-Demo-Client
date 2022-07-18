@@ -57,9 +57,9 @@ export const Map = memo((props) => {
     const zoom = map?.getZoom();
     setFreeze(true);
     try {
-      const res = await axios.post(process.env.REACT_APP_HOST_NAME + '/plot', { lat, lng, zoom, mapType, filteredRadars });
+      const res = await axios.post(/*process.env.REACT_APP_HOST_NAME*/ 'http://18.216.128.50:8080' + '/plot', { lat, lng, zoom, mapType, filteredRadars });
       if(res.status !== 200) setImgPath('error');
-      else setImgPath(`${process.env.REACT_APP_HOST_NAME}/${res.data.fileName}.png`);
+      else setImgPath(`${/*process.env.REACT_APP_HOST_NAME*/'http://18.216.128.50:8080'}/${res.data.fileName}.png`);
     } catch(e) {
       setImgPath('error');
     }
