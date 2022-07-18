@@ -1,7 +1,5 @@
 import './index.css';
 import { Marker } from '@react-google-maps/api';
-import { useEffect, useState } from 'react';
-import { radars } from '../Map';
 
 export const RadarMarker = (props) => {
     const {

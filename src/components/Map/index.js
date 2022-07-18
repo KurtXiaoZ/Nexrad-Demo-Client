@@ -7,6 +7,8 @@ import { ReactComponent as Loading } from '../../lib/loading.svg';
 import { ReactComponent as Error } from '../../lib/error.svg';
 import axios from 'axios';
 
+// https://github.com/netlify/cli/issues/158#issuecomment-540140129
+
 let INIT_LAT = 39.96637466982237;
 let INIT_LNG = -96.54152204152994;
 let INIT_ZOOM = 5;
@@ -16,7 +18,7 @@ export const radars = [];
 export const Map = memo((props) => {
   const { isLoaded } = useJsApiLoader({
     id: 'nexrad-google-map',
-    googleMapsApiKey: "AIzaSyDnpX-gMZbswK_iOTAhQidwDgNYvSTlQWY"
+    googleMapsApiKey: process.env.REACT_APP_MAP_KEY
   })
 
   const [selected, setSelected] = useState("");
@@ -57,9 +59,9 @@ export const Map = memo((props) => {
     const zoom = map?.getZoom();
     setFreeze(true);
     try {
-      const res = await axios.post(/*process.env.REACT_APP_HOST_NAME*/ 'http://18.216.128.50:8080' + '/plot', { lat, lng, zoom, mapType, filteredRadars });
+      const res = await axios.post(process.env.REACT_APP_HOST_NAME + '/plot', { lat, lng, zoom, mapType, filteredRadars });
       if(res.status !== 200) setImgPath('error');
-      else setImgPath(`${/*process.env.REACT_APP_HOST_NAME*/'http://18.216.128.50:8080'}/${res.data.fileName}.png`);
+      else setImgPath(`${process.env.REACT_APP_HOST_NAME}/${res.data.fileName}.png`);
     } catch(e) {
       setImgPath('error');
     }
@@ -101,7 +103,7 @@ export const Map = memo((props) => {
         >
           {imgPath === '' && <Loading className='loading'/>}
           {imgPath === 'error' && <Error />}
-          {imgPath !== '' && imgPath !== 'error' && <img src={imgPath} className='image'/>}
+          {imgPath !== '' && imgPath !== 'error' && <img src={imgPath} className='image' alt='radar-image'/>}
         </div>}
       </GoogleMap>
   </> : <></>
