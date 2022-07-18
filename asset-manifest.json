@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Nexrad-Demo-Client/static/css/main.52a96795.css",
-    "main.js": "/Nexrad-Demo-Client/static/js/main.535ad453.js",
+    "main.js": "/Nexrad-Demo-Client/static/js/main.f58dd07c.js",
     "static/media/radar.svg": "/Nexrad-Demo-Client/static/media/radar.9f4bdc3593007b0617b0076853869d50.svg",
     "static/media/loading.svg": "/Nexrad-Demo-Client/static/media/loading.696863dc90d8a2355b18de8cc1e82e41.svg",
     "static/media/error.svg": "/Nexrad-Demo-Client/static/media/error.2201fd976ca8acdcf1b54d6b9987abb4.svg",
     "index.html": "/Nexrad-Demo-Client/index.html",
     "main.52a96795.css.map": "/Nexrad-Demo-Client/static/css/main.52a96795.css.map",
-    "main.535ad453.js.map": "/Nexrad-Demo-Client/static/js/main.535ad453.js.map"
+    "main.f58dd07c.js.map": "/Nexrad-Demo-Client/static/js/main.f58dd07c.js.map"
   },
   "entrypoints": [
     "static/css/main.52a96795.css",
-    "static/js/main.535ad453.js"
+    "static/js/main.f58dd07c.js"
   ]
 }
